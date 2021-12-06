@@ -37,10 +37,10 @@ public class Main {
         for (List<Point> twoPoints : pointList){
 
             boolean verticle = twoPoints.get(0).getX() == twoPoints.get(1).getX();
-            Method methodType = twoPoints.get(0).getClass().getDeclaredMethod(verticle ? "getY" : "getX");
 
-            int max = (int)Math.max((double) methodType.invoke(twoPoints.get(0)), (double)methodType.invoke(twoPoints.get(1)));
-            int min = (int)Math.min((double)methodType.invoke(twoPoints.get(0)), (double)methodType.invoke(twoPoints.get(1)));
+
+            int max = verticle ? (int)Math.max(twoPoints.get(0).getY(), twoPoints.get(1).getY()) : (int)Math.max(twoPoints.get(0).getX(), twoPoints.get(1).getX());
+            int min = verticle ? (int)Math.min(twoPoints.get(0).getY(), twoPoints.get(1).getY()) : (int)Math.min(twoPoints.get(0).getX(), twoPoints.get(1).getX());
 
             if (twoPoints.get(0).getX()==twoPoints.get(1).getX() && twoPoints.get(0).getY()==twoPoints.get(1).getY()) System.out.println("yes");
 
@@ -57,7 +57,7 @@ public class Main {
         for (List<Integer> row : grid){
             StringBuilder temp = new StringBuilder();
             for (int number : row){
-                temp.append(number + " ");
+                temp.append(number).append(" ");
             }
             System.out.println(temp);
         }
