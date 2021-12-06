@@ -1,5 +1,7 @@
 package me.BvngeeCord.Day4;
 
+import me.BvngeeCord.Util;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,19 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<String> list = new ArrayList<>();
-
-        try{
-            File file = new File("C:\\Users\\Jack\\Documents\\GitHub\\AdventOfCode\\src\\me\\BvngeeCord\\Day4\\list.txt");
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNext()) {
-                list.add(scanner.nextLine());
-            }
-            System.out.println(list);
-
-        }catch(FileNotFoundException exception){
-            System.out.println(exception);
-        }
+        ArrayList<String> list = Util.getPuzzleInput(4);
 
         List<Integer> numbers = Arrays.stream(list.get(0).split(",")).toList().stream().map(Integer::parseInt).toList();
         System.out.println(numbers);
