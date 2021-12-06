@@ -1,4 +1,4 @@
-package me.BvngeeCord.Day4.Part1;
+package me.BvngeeCord.Day4;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class Board {
         boardState = values;
     }
 
-    private void setBoardStateAt(int x, int y, int value){
+    public void setBoardStateAt(int x, int y, int value){
         boardState.get(y).set(x, value);
     }
 
@@ -18,8 +18,6 @@ public class Board {
         for (int i=0; i<boardState.toArray().length; i++){
             for (int j=0; j<boardState.get(i).toArray().length; j++){
                 if (this.getBoardStateAt(j, i) == targetNumber){
-                    System.out.println(i + " " + j);
-                    System.out.println(this.getBoardStateAt(j, i));
                     this.setBoardStateAt(j, i, newValue);
                 }
             }
