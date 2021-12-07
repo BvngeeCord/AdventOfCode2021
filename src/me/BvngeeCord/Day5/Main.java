@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println("part one " + partOne(pointList, grid, false));
         // (since part one only does straight lines and part two only does diagonals, grid doesn't need to be reset)
-        System.out.println("part two " + partTwo(pointList, grid, false));
+        System.out.println("part two " + partTwo(pointList, grid, true));
 
     }
 
