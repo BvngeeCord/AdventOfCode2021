@@ -14,17 +14,12 @@ public class Main {
         for (int n : fish){
             score[n] ++;
         }
-
         System.out.println("part one " + calculateFish(score, 80));
-
         score = new long[9];
         for (int n : fish){
             score[n] ++;
         }
-
         System.out.println("part two " + calculateFish(score, 256));
-
-        System.out.println(score[0]);
     }
 
     public static long calculateFish(long[] score, int days){
